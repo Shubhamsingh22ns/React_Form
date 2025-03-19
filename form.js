@@ -145,3 +145,29 @@ function Form1() {
 }
 
 export default Form1;
+
+
+
+
+<Form>
+          <FormControl fullWidth margin="normal" error={touched.status && !!errors.status}>
+            <InputLabel>Status</InputLabel>
+            <Select
+              name="status"
+              value={values.status}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              displayEmpty
+              variant="filled"
+            >
+              <MenuItem value="" disabled>
+                Select Status
+              </MenuItem>
+              <MenuItem value="Active">Active</MenuItem>
+              <MenuItem value="Disabled">Disabled</MenuItem>
+            </Select>
+            {touched.status && errors.status && <Box color="error.main">{errors.status}</Box>}
+          </FormControl>
+
+          <button type="submit">Submit</button>
+        </Form>
